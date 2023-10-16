@@ -1,0 +1,18 @@
+rodint = input("Input rods: ")
+
+rodfloat = float(rodint)
+# The following strings should be in the same print statement 
+# separated by the input rods
+
+meters = rodfloat * 5.0292
+furlongs = rodfloat/40
+miles = meters/1609.34
+feet = meters/0.3048
+walkminutes = (miles/3.1)* 60
+
+print("\nYour value is", rodfloat, "rods.\n")
+print("Meters:", round(meters, 3))
+print("Feet:", round(feet, 3))
+print("Miles:", round(miles, 3))
+print("Furlongs:", round(furlongs, 3))
+print("Minutes to walk", rodfloat, "rods:", round(walkminutes, 3))
