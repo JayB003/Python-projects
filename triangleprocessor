@@ -1,0 +1,117 @@
+import math
+from math import *
+
+BANNER = '''
+
+╭━━━━╮╱╱╱╱╱╱╱╱╱╱╭╮
+┃╭╮╭╮┃╱╱╱╱╱╱╱╱╱╱┃┃
+╰╯┃┃┣┻┳┳━━┳━╮╭━━┫┃╭━━╮
+╱╱┃┃┃╭╋┫╭╮┃╭╮┫╭╮┃┃┃┃━┫
+╱╱┃┃┃┃┃┃╭╮┃┃┃┃╰╯┃╰┫┃━┫
+╱╱╰╯╰╯╰┻╯╰┻╯╰┻━╮┣━┻━━╯
+╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
+'''
+
+print(BANNER)
+print()
+validtriangle = 0
+while True:
+    answer = input("Do you wish to process a triangle" "(Y or N)?")
+    if answer == "Y" or answer == "y":
+        #while answer == "Y":
+        
+    
+    
+            side1 = float(input("Enter length of side AB: "))
+            side2 = float(input("Enter length of side BC: "))
+            side3 = float(input("Enter length of side CA: "))
+
+            if side1 <= side2 <= side3 and side1 + side2 == side3:
+                print("Degenerate Triangle")
+                continue
+
+            
+                
+            if side1 + side2 >= side3 and side2 + side3 >= side1 and side3 + side1 >= side2:
+                print("Valid Triangle")
+                print("Triangle sides", )
+                print("Length of side AB", side1, "Lenght of side CA", side2, "Length of BC", side3)
+                
+                angleA = degrees(acos((side2**2 + side3**2 - side1**2)/(2*side2*side3)))
+                
+                
+                angleB = degrees(acos((side3**2 + side1**2 - side2**2)/(2*side3*side1)))
+                angleC = degrees(acos((side1**2 + side2**2 - side3**2)/(2*side1*side2)))
+
+                roundangleA = round(angleA, 1)
+                roundangleB = round(angleB, 1)
+                roundangleC = round(angleC, 1)
+                print("Degree measures of interior angles:")
+                print(str(roundangleA) + "degrees", str(roundangleB) + "degrees", str(roundangleC) + "degrees")
+                radian1 = (math.radians(angleA))
+                roundradians = (round(radian1, 1))           
+
+                print("Radian measures of interior angles:")          
+                print(roundradians, "radians") 
+        
+         
+                
+                radian2 = (math.radians(angleB))
+                roundradians2 = (round(radian2, 1))           
+                print(roundradians2, "radians") 
+       
+
+                
+                radian3 = (math.radians(angleC))
+                roundradians3 = (round(radian3, 1))            
+                print(roundradians3, "radians")
+
+                print("Perimeter and Area of triangle:")
+                perimeter = side1 + side2 +side3
+                roundperimeter = round(perimeter, 1)
+                print("Perimeter of triangle", roundperimeter)
+                d = (side1 + side2 + side3)/2
+                area = (d*(d-side1)*(d-side2)*(d-side3))**0.5
+                roundarea = round(area, 1)
+                print("Area of triangle", roundarea)
+
+
+
+            
+
+            else:
+                print("Not a Triangle")
+                continue
+                
+            
+            
+
+            print("Type of Triangle:")
+            if side1 == side2 and side2 == side3:
+                print("Equilateral Triangle")
+                print("Isoceles Triangle")
+                print("Oblique Triangle")
+            elif side1 == side2 or side2 == side3 or side1 == side3:
+                print("Isoceles Triangle")
+                print("Oblique Triangle")
+            else:
+                print("Scalene Triangle")
+                print("Oblique Triangle")
+            if side1**2 + side2**2 == side3**2:
+                print("Right Triangle")
+
+            if roundangleA>=90 or roundangleB>=90 or roundangleC>=90:
+                print("Obtuse Triangle")
+
+
+            validtriangle = validtriangle + 1
+            print("Number of valid triangles", validtriangle)
+
+    if answer == "N":
+        print("Number of valid triangles:", validtriangle)
+        break
+    if answer == "n":
+        print("Number of valid triangles:", validtriangle)
+        break
+    
